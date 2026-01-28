@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('myModal');
   const openBtn = document.getElementById('openBtn');
   const closeBtn = document.getElementById('closeBtn');
-  const span = document.querySelector('.close');
 
   function openModal() {
     if (!modal) return;
@@ -17,14 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // premier bouton ouvre directement la modale
   if (openBtn) openBtn.addEventListener('click', openModal);
-
-  // la croix redirige vers la page d'accueil
-  if (span) {
-    span.addEventListener('click', (e) => {
-      e.stopPropagation();
-      window.location.href = '/';
-    });
-  }
 
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
