@@ -20,8 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // la croix redirige vers la page d'accueil
   if (span) {
-    span.addEventListener('click', () => {
-      window.location.href = 'jspjetest.html';
+    span.addEventListener('click', (e) => {
+      e.stopPropagation();
+      window.location.href = '/';
     });
   }
 
