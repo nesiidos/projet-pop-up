@@ -17,7 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // premier bouton ouvre directement la modale
   if (openBtn) openBtn.addEventListener('click', openModal);
 
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  // bouton croix pour fermer
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      closeModal();
+    });
+  }
 
   window.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
   window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
